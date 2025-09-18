@@ -6,369 +6,15 @@
     <title>Santana Contadores | Asesoría Contable y Fiscal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* --- VARIABLES Y ESTILOS GENERALES --- */
-        :root {
-            --verde-bandera: #006341;
-            --dorado: #C99700;
-            --gris-oscuro: #343a40;
-            --blanco-humo: rgba(245, 245, 245, 0.9);
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            /* Espacio superior para compensar las barras de navegación fijas */
-            padding-top: 98px; 
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            font-size: 2.5rem;
-            color: var(--verde-bandera);
-        }
-
-        /* --- BARRA DE CONTACTO SUPERIOR --- */
-        .top-header {
-            background-color: #f8f9fa;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e7e7e7;
-            font-size: 0.85rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1031; /* Superior al navbar */
-            transition: top 0.3s ease-in-out;
-        }
-
-        /* --- NAVBAR PRINCIPAL --- */
-        .navbar {
-            background-color: var(--verde-bandera);
-            transition: all 0.3s ease;
-            top: 42px; /* Posición inicial debajo del top-header */
-        }
-        
-        .navbar.scrolled {
-            background-color: rgba(0, 99, 65, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            top: 0; /* Se mueve arriba cuando el header desaparece */
-        }
-
-        .navbar-brand img {
-            height: 40px;
-        }
-
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            margin: 0 8px;
-            position: relative;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--dorado) !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--dorado);
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s;
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        /* --- SECCIÓN HERO --- */
-        #hero {
-            position: relative;
-            height: 70vh;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: url('https://images.unsplash.com/photo-1554224155-82a472179924?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
-        }
-
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /* El efecto "humo blanco" se logra con este gradiente */
-            background: linear-gradient(rgba(0, 99, 65, 0.6), rgba(0, 0, 0, 0.7));
-            z-index: 1;
-        }
-
-        #hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        #hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn-gold {
-            background-color: var(--dorado);
-            border-color: var(--dorado);
-            color: white;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-gold:hover {
-            background-color: #A47B00;
-            border-color: #A47B00;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* --- TARJETAS DE SERVICIOS ANIMADAS --- */
-        .service-card {
-            width: 180px;
-            height: 180px;
-            background: var(--verde-bandera);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            place-content: center;
-            place-items: center;
-            overflow: hidden;
-            border-radius: 20px;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .service-card i {
-            font-size: 3em;
-            z-index: 1;
-        }
-
-        .service-card p {
-            z-index: 1;
-            font-size: 1em;
-            font-weight: 500;
-            margin-top: 10px;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            width: 100px;
-            background-image: linear-gradient(180deg, var(--dorado), var(--dorado));
-            height: 130%;
-            animation: rotBGimg 3s linear infinite;
-            transition: all 0.2s linear;
-        }
-
-        @keyframes rotBGimg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            background: var(--verde-bandera);
-            inset: 5px;
-            border-radius: 15px;
-        }
-        
-        /* --- TARJETAS DE NOTICIAS --- */
-        .news-card {
-            border-radius: 0.5rem;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e5e7eb;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-        
-        .news-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-card a { text-decoration: none; }
-        .news-card .content { padding: 1.1rem; }
-        .news-card .image {
-            object-fit: cover;
-            width: 100%;
-            height: 180px;
-            background-color: #e0e0e0;
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
-        }
-        .news-card .title {
-            color: #111827;
-            font-size: 1.125rem;
-            line-height: 1.5rem;
-            font-weight: 600;
-        }
-        .news-card .desc {
-            margin-top: 0.5rem;
-            color: #6B7280;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-        }
-        .news-card .action {
-            display: inline-flex;
-            margin-top: 1rem;
-            color: #ffffff;
-            font-size: 0.875rem;
-            font-weight: 500;
-            align-items: center;
-            gap: 0.25rem;
-            background-color: var(--verde-bandera);
-            padding: 6px 12px;
-            border-radius: 4px;
-        }
-        .news-card .action span { transition: .3s ease; }
-        .news-card .action:hover span { transform: translateX(4px); }
-
-        /* --- SECCIÓN CTA (CALL TO ACTION) --- */
-        #cta {
-            background-color: var(--blanco-humo);
-            padding: 5rem 0;
-            text-align: center;
-        }
-
-        #cta .speech-bubble {
-            position: relative;
-            background: #fff;
-            border-radius: .4em;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-        }
-
-        #cta .speech-bubble:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            border-top-color: #fff;
-            border-bottom: 0;
-            margin-left: -20px;
-            margin-bottom: -20px;
-        }
-        
-        #cta h3 {
-            font-size: 1.8rem;
-            color: var(--verde-bandera);
-            margin-bottom: 0;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--gris-oscuro);
-            color: #adb5bd;
-            font-size: 0.9rem;
-        }
-        
-        footer h5 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        footer a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: var(--dorado);
-        }
-        
-        footer ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        footer ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #495057;
-            padding-top: 1.5rem;
-        }
-        
-        /* --- BOTÓN FLOTANTE WHATSAPP --- */
-        .float-wa {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* --- Media Queries para Responsividad --- */
-        @media (max-width: 991.98px) {
-            body { padding-top: 104px; } /* Ajuste para el header + navbar colapsado */
-            .navbar { top: 42px; }
-            #hero h1 { font-size: 2.5rem; }
-            #hero p { font-size: 1.2rem; }
-            .top-header { display: none; } /* Ocultar barra superior en móviles */
-            body { padding-top: 56px; } /* Solo el espacio del navbar */
-            .navbar { top: 0; }
-        }
-        
-    </style>
+    <link rel="stylesheet" href="css/colores.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/principal.css">
 </head>
 <body>
     
@@ -510,7 +156,7 @@
                 <div class="speech-bubble">
                     <h3>¿Tienes alguna duda para nuestro equipo?</h3>
                 </div>
-                 <a href="#contacto" class="btn btn-gold btn-lg">CONTACTO</a>
+                <a href="#contacto" class="btn btn-gold btn-lg">CONTACTO</a>
             </div>
         </section>
     </main>
@@ -535,7 +181,7 @@
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Contacto</h5>
-                     <ul class="list-unstyled">
+                    <ul class="list-unstyled">
                         <li><i class="fas fa-map-marker-alt me-2"></i> Cuernavaca, Morelos, México</li>
                         <li><i class="fas fa-phone me-2"></i> (777) 444 9100</li>
                         <li><i class="fas fa-envelope me-2"></i> contacto@santanacontadores.mx</li>
@@ -543,8 +189,8 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mb-4">
-                     <h5>Legales</h5>
-                     <ul class="list-unstyled">
+                    <h5>Legales</h5>
+                    <ul class="list-unstyled">
                         <li><a href="#">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
@@ -558,35 +204,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.querySelector('.navbar');
-            const topHeader = document.querySelector('.top-header');
-            let lastScrollTop = 0;
-
-            window.addEventListener('scroll', function() {
-                // Efecto de cambio de color en navbar
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-
-                // Lógica para ocultar/mostrar la barra de contacto superior
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (topHeader) { // Asegurarnos que el elemento exista
-                    if (scrollTop > lastScrollTop && scrollTop > topHeader.offsetHeight){
-                        // Scroll hacia abajo
-                        topHeader.style.top = `-${topHeader.offsetHeight}px`;
-                    } else {
-                        // Scroll hacia arriba
-                        topHeader.style.top = '0';
-                    }
-                }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-            });
-        });
-    </script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

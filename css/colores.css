@@ -1,0 +1,7 @@
+/* --- VARIABLES Y ESTILOS GENERALES --- */
+:root {
+    --verde-bandera: #006341;
+    --dorado: #C99700;
+    --gris-oscuro: #343a40;
+    --blanco-humo: rgba(245, 245, 245, 0.9);
+}
