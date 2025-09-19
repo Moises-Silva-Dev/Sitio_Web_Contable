@@ -1,0 +1,10 @@
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 991.98px) {
+    body { padding-top: 104px; } /* Ajuste para el header + navbar colapsado */
+    .navbar { top: 42px; }
+    #hero h1 { font-size: 2.5rem; }
+    #hero p { font-size: 1.2rem; }
+    .top-header { display: none; } /* Ocultar barra superior en móviles */
+    body { padding-top: 56px; } /* Solo el espacio del navbar */
+    .navbar { top: 0; }
+}

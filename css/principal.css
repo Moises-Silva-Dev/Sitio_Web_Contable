@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('https://images.unsplash.com/photo-1554224155-82a472179924?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background: url(../img/conta.jpg) no-repeat center center/cover;
 }
 
 #hero::before {
@@ -193,34 +193,4 @@
     font-size: 1.8rem;
     color: var(--verde-bandera);
     margin-bottom: 0;
-}
-
-/* --- BOTÓN FLOTANTE WHATSAPP --- */
-.float-wa {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* --- Media Queries para Responsividad --- */
-@media (max-width: 991.98px) {
-    body { padding-top: 104px; } /* Ajuste para el header + navbar colapsado */
-    .navbar { top: 42px; }
-    #hero h1 { font-size: 2.5rem; }
-    #hero p { font-size: 1.2rem; }
-    .top-header { display: none; } /* Ocultar barra superior en móviles */
-    body { padding-top: 56px; } /* Solo el espacio del navbar */
-    .navbar { top: 0; }
 }
