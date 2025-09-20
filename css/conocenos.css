@@ -1,0 +1,76 @@
+/* Estilos de las secciones con imagen y texto */
+.about-section {
+    padding: 5rem 0;
+}
+.about-section .content-box {
+    padding: 2rem;
+}
+.about-section .image-box {
+    position: relative;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+.about-section .image-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, var(--overlay-color), rgba(0,0,0,0.3));
+}
+
+/* Estilos para las tarjetas de Filosofía */
+.philosophy-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.philosophy-cards .card-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 300px; /* Más altura para el texto */
+    width: 330px; /* Más ancho */
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    padding: 20px;
+    overflow: hidden;
+}
+.philosophy-cards .mision { background-color: var(--verde-bandera); }
+.philosophy-cards .vision { background-color: var(--dorado); }
+.philosophy-cards .objetivo { background-color: var(--gris-oscuro); }
+
+.philosophy-cards .card-item .tip {
+    font-size: 1.5em; /* Título más grande */
+    font-weight: 700;
+}
+.philosophy-cards .card-item .tip i {
+    display: block;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+.philosophy-cards .card-item .second-text {
+    font-size: .9em; /* Texto secundario más legible */
+}
+.philosophy-cards .card-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.philosophy-cards:hover > .card-item:not(:hover) {
+    filter: blur(5px);
+    transform: scale(0.95);
+}
+.btn-gold {
+    background-color: var(--dorado); border-color: var(--dorado);
+    color: white; padding: 10px 25px; font-weight: 600;
+    transition: all 0.3s;
+}
+.btn-gold:hover {
+    background-color: #A47B00; border-color: #A47B00; color: white;
+}
