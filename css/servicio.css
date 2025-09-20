@@ -1,0 +1,80 @@
+/* Estilos para las tarjetas de servicios (basado en tu código) */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+.card {
+    width: 100%; /* Ancho responsivo */
+    max-width: 240px; /* Ancho máximo */
+    height: 280px;
+    border-radius: 20px;
+    background: #fff;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #e0e0e0;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.card-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-icon {
+    font-size: 4rem;
+    color: var(--color-iconos);
+    margin-bottom: 1rem;
+}
+.card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--color-principal);
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+.text-title { font-size: 1.2em; font-weight: bold; }
+.card:hover {
+    border-color: var(--color-principal);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+.card:hover .card-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* Estilos para el Modal */
+.modal-header {
+    background-color: var(--gris-oscuro);
+    color: white;
+    border-bottom: 3px solid var(--dorado);
+}
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+.modal-header .modal-title i {
+    font-size: 2rem;
+}
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}

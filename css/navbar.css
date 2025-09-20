@@ -1,7 +1,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     /* Espacio superior para compensar las barras de navegación fijas */
-    padding-top: 98px; 
+    padding-top: 98px;
+    background-color: #f8f9fa;
 }
 
 h1, h2, h3 {
