@@ -1,59 +1,51 @@
-/* Estilos del Artículo */
-.article-header .post-image {
-    width: 100%;
-    height: auto;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: .5rem;
-}
-.article-body {
+/* Estilos de las Tarjetas de Noticias */
+.news-card {
+    border-radius: 0.5rem;
     background-color: #fff;
-    padding: 2.5rem;
-    border-radius: .5rem;
-    margin-top: -80px; /* Eleva el contenido sobre la imagen */
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
-
-.date-box {
-    background-color: var(--dorado);
-    color: white;
-    border-radius: .25rem;
-    padding: 0.5rem 0.8rem;
-    text-align: center;
-    width: fit-content;
-    line-height: 1;
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
-.date-box .day {
-    font-size: 1.5rem;
-    font-weight: 700;
-    display: block;
+.news-card a { text-decoration: none; }
+.news-card .content { padding: 1.2rem; }
+.news-card .image {
+    object-fit: cover;
+    width: 100%;
+    height: 180px;
+    background-color: #e0e0e0;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
 }
-.date-box .month {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    display: block;
+.news-card .title {
+    color: #111827;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 600;
 }
-
-.post-meta {
-    color: #6c757d;
+.news-card .desc {
+    margin-top: 0.5rem;
+    color: #6B7280;
     font-size: 0.9rem;
+    line-height: 1.4rem;
 }
-
-.article-content {
-    margin-top: 2rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #343a40;
+.news-card .action {
+    display: inline-flex;
+    margin-top: 1rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: var(--verde-bandera);
+    padding: 6px 12px;
+    border-radius: 4px;
 }
-.article-content h3 {
-    color: var(--verde-bandera);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-.article-content ul {
-    padding-left: 20px;
-}
-.article-content li {
-    margin-bottom: 0.5rem;
-}
+.news-card .action span { transition: .3s ease; }
+.news-card .action:hover span { transform: translateX(4px); }
