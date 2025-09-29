@@ -3,6 +3,7 @@
     --verde-bandera: #006341;
     --dorado: #C99700;
     --gris-oscuro: #343a40;
+    --gris-claro: #f8f9fa;
     --blanco-humo: rgba(245, 245, 245, 0.9);
     --overlay-color: rgba(201, 151, 0, 0.7); /* Overlay dorado/naranja */
     --color-principal: var(--verde-bandera); /* Color para hover y botones */
