@@ -1,0 +1,59 @@
+/* Estilos del Artículo */
+.article-header .post-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+.article-body {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: .5rem;
+    margin-top: -80px; /* Eleva el contenido sobre la imagen */
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.date-box {
+    background-color: var(--dorado);
+    color: white;
+    border-radius: .25rem;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    width: fit-content;
+    line-height: 1;
+}
+.date-box .day {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+}
+.date-box .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+}
+
+.post-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.article-content {
+    margin-top: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #343a40;
+}
+.article-content h3 {
+    color: var(--verde-bandera);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.article-content ul {
+    padding-left: 20px;
+}
+.article-content li {
+    margin-bottom: 0.5rem;
+}
