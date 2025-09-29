@@ -15,4 +15,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: aparecer 0.5s ease forwards;
+}
+
+.float-wa:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 4px 4px 6px #999;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+    }
 }
