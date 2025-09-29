@@ -7,12 +7,15 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
 }
+
 .news-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
+
 .news-card a { text-decoration: none; }
 .news-card .content { padding: 1.2rem; }
+
 .news-card .image {
     object-fit: cover;
     width: 100%;
@@ -23,18 +26,21 @@
     background-size: cover;
     background-position: center;
 }
+
 .news-card .title {
     color: #111827;
     font-size: 1.125rem;
     line-height: 1.5rem;
     font-weight: 600;
 }
+
 .news-card .desc {
     margin-top: 0.5rem;
     color: #6B7280;
     font-size: 0.9rem;
     line-height: 1.4rem;
 }
+
 .news-card .action {
     display: inline-flex;
     margin-top: 1rem;
@@ -47,5 +53,6 @@
     padding: 6px 12px;
     border-radius: 4px;
 }
+
 .news-card .action span { transition: .3s ease; }
 .news-card .action:hover span { transform: translateX(4px); }
